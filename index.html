@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kaleab Sintayehu | International Affairs</title>
+<title>Kaleab Sintayehu | International Affairs & Diplomacy</title>
 
-<meta name="description" content="Kaleab Sintayehu — Political Science and International Relations student, youth leader and communications professional.">
+<meta name="description" content="Kaleab Sintayehu — Political Science and International Relations student, communications intern, youth leader and international affairs enthusiast.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   RESET
+   GLOBAL
 ========================= */
 
 * {
@@ -30,26 +30,26 @@ html {
 }
 
 body {
-    background: #06101c;
-    color: #f5f2eb;
-    font-family: "Inter", sans-serif;
-    overflow-x: hidden;
+    background: #06111f;
+    color: #f4f1e9;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 :root {
-    --navy: #06101c;
-    --navy2: #0a1828;
-    --card: #0c1c2e;
+    --navy: #06111f;
+    --navy2: #091a2c;
+    --navy3: #0d2238;
     --gold: #c9a45c;
-    --gold2: #e0c27b;
-    --white: #f5f2eb;
-    --muted: #9aa8b8;
-    --line: rgba(255,255,255,0.09);
+    --gold-light: #e4c77f;
+    --white: #f4f1e9;
+    --muted: #98a7b8;
+    --border: rgba(255,255,255,0.09);
 }
 
 
@@ -62,18 +62,20 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
 
-    background: rgba(6,16,28,0.72);
-    backdrop-filter: blur(18px);
+    background: rgba(6,17,31,0.9);
+    backdrop-filter: blur(15px);
 
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid var(--border);
 }
 
-.nav-inner {
+.navbar {
     max-width: 1250px;
     margin: auto;
-    padding: 20px 35px;
+
+    height: 78px;
+    padding: 0 30px;
 
     display: flex;
     justify-content: space-between;
@@ -82,7 +84,7 @@ nav {
 
 .logo {
     font-family: "Playfair Display", serif;
-    font-size: 28px;
+    font-size: 29px;
     font-weight: 700;
 }
 
@@ -96,23 +98,15 @@ nav {
 }
 
 .nav-links a {
-    color: #aeb8c4;
+    color: #aab5c2;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: var(--gold);
-}
-
-.menu {
-    display: none;
-    color: white;
-    background: none;
-    border: none;
-    font-size: 25px;
 }
 
 
@@ -123,115 +117,121 @@ nav {
 .hero {
     min-height: 100vh;
     position: relative;
+    overflow: hidden;
+
     display: flex;
     align-items: center;
-    overflow: hidden;
 
     background:
         radial-gradient(
-            circle at 75% 45%,
-            rgba(201,164,92,.12),
+            circle at 75% 50%,
+            rgba(201,164,92,0.14),
             transparent 30%
         ),
         linear-gradient(
             135deg,
-            #06101c,
-            #091827 55%,
+            #06111f,
+            #091a2c 60%,
             #050d17
         );
 }
 
-.hero-inner {
+.hero-container {
     width: 100%;
     max-width: 1250px;
     margin: auto;
-    padding: 130px 35px 80px;
+
+    padding: 130px 30px 70px;
 
     display: grid;
-    grid-template-columns: 1.1fr .9fr;
+    grid-template-columns: 1fr 0.85fr;
     align-items: center;
 }
 
-.hero-content {
+
+/* HERO TEXT */
+
+.hero-text {
     position: relative;
     z-index: 5;
 }
 
 .eyebrow {
     color: var(--gold);
-    font-size: 11px;
-    letter-spacing: 3px;
+    font-size: 10px;
     font-weight: 600;
+    letter-spacing: 3px;
     margin-bottom: 25px;
 }
 
 .hero h1 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(70px, 9vw, 125px);
-    line-height: .88;
+    font-size: clamp(65px, 9vw, 120px);
+    line-height: 0.9;
     letter-spacing: -5px;
     font-weight: 600;
 }
 
-.hero h1 .outline {
+.hero h1 span {
     color: transparent;
-    -webkit-text-stroke: 1px rgba(245,242,235,.7);
+    -webkit-text-stroke: 1px rgba(244,241,233,0.65);
 }
 
 .hero-description {
-    max-width: 600px;
+    max-width: 590px;
     margin-top: 35px;
 
     color: var(--muted);
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.9;
 }
 
-.buttons {
+.hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 14px;
     margin-top: 35px;
 }
 
-.btn {
-    padding: 14px 24px;
+.button {
+    padding: 14px 23px;
+
     border: 1px solid var(--gold);
 
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
 
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.btn-gold {
+.button-primary {
     background: var(--gold);
-    color: #06101c;
+    color: #06111f;
 }
 
-.btn-gold:hover {
-    background: var(--gold2);
-    transform: translateY(-3px);
+.button-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
 }
 
-.btn-outline {
+.button-secondary {
     color: var(--gold);
 }
 
-.btn-outline:hover {
-    background: rgba(201,164,92,.1);
+.button-secondary:hover {
+    background: rgba(201,164,92,0.1);
 }
 
-.socials {
+.social-links {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     margin-top: 28px;
 
-    color: #8391a1;
+    color: #8492a2;
     font-size: 11px;
 }
 
-.socials a:hover {
+.social-links a:hover {
     color: var(--gold);
 }
 
@@ -240,16 +240,17 @@ nav {
    HERO IMAGE
 ========================= */
 
-.hero-image {
-    position: relative;
-    height: 680px;
+.hero-photo {
+    height: 650px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    position: relative;
 }
 
-.hero-image::before {
+.hero-photo::before {
     content: "";
 
     position: absolute;
@@ -259,33 +260,31 @@ nav {
 
     border-radius: 50%;
 
-    background: rgba(201,164,92,.08);
+    background: rgba(201,164,92,0.1);
 
-    filter: blur(90px);
+    filter: blur(80px);
 }
 
-.hero-image img {
+.hero-photo img {
     position: relative;
     z-index: 2;
 
     width: 100%;
     max-width: 560px;
-    height: 680px;
+    height: 650px;
 
     object-fit: cover;
     object-position: center top;
 
-    opacity: .62;
+    opacity: 0.62;
 
-    filter:
-        grayscale(15%)
-        contrast(1.08);
+    filter: grayscale(15%) contrast(1.08);
 
     -webkit-mask-image:
         linear-gradient(
             to right,
             transparent 0%,
-            black 20%,
+            black 18%,
             black 75%,
             transparent 100%
         );
@@ -294,7 +293,7 @@ nav {
         linear-gradient(
             to right,
             transparent 0%,
-            black 20%,
+            black 18%,
             black 75%,
             transparent 100%
         );
@@ -302,37 +301,42 @@ nav {
 
 
 /* =========================
-   SECTIONS
+   GENERAL SECTIONS
 ========================= */
 
 .section {
     max-width: 1250px;
     margin: auto;
-    padding: 130px 35px;
+
+    padding: 120px 30px;
 }
 
-.dark {
+.section-dark {
     max-width: none;
-    padding-left: max(35px, calc((100vw - 1180px)/2));
-    padding-right: max(35px, calc((100vw - 1180px)/2));
 
-    background: #091725;
+    padding-left: max(30px, calc((100vw - 1190px) / 2));
+    padding-right: max(30px, calc((100vw - 1190px) / 2));
+
+    background: #091a2a;
 }
 
-.section-number {
+.section-label {
     color: var(--gold);
+
     font-size: 10px;
+    font-weight: 600;
     letter-spacing: 3px;
-    margin-bottom: 20px;
+
+    margin-bottom: 18px;
 }
 
 .section-title {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(45px, 6vw, 75px);
-    line-height: 1.05;
-    font-weight: 500;
-
     max-width: 850px;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(43px, 6vw, 73px);
+    font-weight: 500;
+    line-height: 1.05;
 }
 
 .section-title span {
@@ -345,46 +349,47 @@ nav {
 ========================= */
 
 .about-grid {
-    display: grid;
-    grid-template-columns: 1.4fr .6fr;
-    gap: 100px;
+    margin-top: 60px;
 
-    margin-top: 65px;
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+
+    gap: 90px;
+}
+
+.about-text .intro {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    line-height: 1.55;
+    color: var(--white);
 }
 
 .about-text p {
     color: var(--muted);
-    margin-bottom: 24px;
-    line-height: 1.8;
+    margin-bottom: 25px;
+    line-height: 1.9;
 }
 
-.about-text .large {
-    color: var(--white);
-
-    font-family: "Playfair Display", serif;
-    font-size: 24px;
-    line-height: 1.5;
-}
-
-.stats {
-    border-left: 1px solid rgba(201,164,92,.3);
+.about-stats {
+    border-left: 1px solid rgba(201,164,92,0.3);
     padding-left: 35px;
 }
 
 .stat {
-    padding: 23px 0;
-    border-bottom: 1px solid var(--line);
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.stat strong {
+.stat-number {
     display: block;
 
     color: var(--gold);
+
     font-family: "Playfair Display", serif;
-    font-size: 27px;
+    font-size: 28px;
 }
 
-.stat span {
+.stat-text {
     color: var(--muted);
     font-size: 11px;
 }
@@ -394,65 +399,75 @@ nav {
    EXPERIENCE
 ========================= */
 
+.experience-list {
+    margin-top: 55px;
+}
+
 .experience {
-    margin-top: 60px;
-}
-
-.experience-item {
     display: grid;
-    grid-template-columns: 170px 1fr;
-    gap: 50px;
+    grid-template-columns: 160px 1fr;
 
-    padding: 55px 0;
+    gap: 45px;
 
-    border-top: 1px solid var(--line);
+    padding: 50px 0;
+
+    border-top: 1px solid var(--border);
 }
 
-.date {
+.experience-date {
     color: var(--gold);
+
     font-size: 10px;
     letter-spacing: 2px;
 }
 
-.type {
+.experience-category {
     color: var(--gold);
+
     font-size: 9px;
     letter-spacing: 2px;
+
     margin-bottom: 10px;
 }
 
-.experience-item h3 {
+.experience h3 {
     font-family: "Playfair Display", serif;
-    font-size: 35px;
+    font-size: 34px;
     font-weight: 500;
 }
 
-.role {
+.experience-role {
     color: var(--muted);
     margin: 5px 0 20px;
 }
 
-.description {
+.experience-description {
     color: var(--muted);
-    max-width: 760px;
+
+    max-width: 750px;
+
     line-height: 1.8;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
+
     gap: 8px;
+
     margin-top: 22px;
 }
 
-.tags span {
-    border: 1px solid rgba(201,164,92,.2);
+.tag {
     padding: 6px 11px;
 
+    border: 1px solid rgba(201,164,92,0.22);
+
     color: var(--muted);
+
     font-size: 9px;
-    letter-spacing: 1px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 
@@ -461,35 +476,41 @@ nav {
 ========================= */
 
 .cards {
+    margin-top: 60px;
+
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+
     gap: 18px;
-    margin-top: 65px;
 }
 
 .card {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,.05);
-
-    padding: 32px;
     min-height: 250px;
 
-    transition: .4s;
+    padding: 32px;
+
+    background: #0c2033;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    transition: 0.35s;
 }
 
 .card:hover {
     transform: translateY(-7px);
-    border-color: rgba(201,164,92,.35);
+
+    border-color: rgba(201,164,92,0.35);
 }
 
 .card-number {
     color: var(--gold);
+
     font-size: 10px;
     letter-spacing: 2px;
 }
 
 .card h3 {
-    margin-top: 55px;
+    margin-top: 50px;
 
     font-family: "Playfair Display", serif;
     font-size: 26px;
@@ -497,10 +518,12 @@ nav {
 }
 
 .card p {
+    margin-top: 10px;
+
     color: var(--muted);
+
     font-size: 13px;
     line-height: 1.7;
-    margin-top: 10px;
 }
 
 
@@ -511,69 +534,77 @@ nav {
 .education {
     margin-top: 60px;
 
-    padding: 50px;
-
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,.05);
-
     display: grid;
     grid-template-columns: 160px 1fr;
+
     gap: 45px;
+
+    padding: 50px;
+
+    background: #0c2033;
+
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
 .education-year {
     color: var(--gold);
+
     font-family: "Playfair Display", serif;
     font-size: 24px;
 }
 
 .education-label {
     color: var(--gold);
+
     font-size: 9px;
     letter-spacing: 2px;
 }
 
 .education h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 38px;
     margin-top: 8px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 37px;
 }
 
 .education h4 {
     color: var(--muted);
     font-weight: 400;
+
     margin-bottom: 18px;
 }
 
 .education p {
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 
-/* =========================
-   LANGUAGES
-========================= */
+/* LANGUAGES */
 
 .languages {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+
     margin-top: 20px;
 }
 
 .language {
     padding: 28px 0;
-    border-bottom: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--border);
 }
 
 .language strong {
     display: block;
+
     font-family: "Playfair Display", serif;
     font-size: 25px;
 }
 
-.language small {
+.language span {
     color: var(--muted);
+    font-size: 11px;
 }
 
 
@@ -582,18 +613,21 @@ nav {
 ========================= */
 
 .skills {
+    margin-top: 55px;
+
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    margin-top: 60px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .skill {
-    padding: 30px 0;
-    border-bottom: 1px solid var(--line);
-
     display: flex;
-    gap: 25px;
     align-items: center;
+
+    gap: 25px;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid var(--border);
 }
 
 .skill-number {
@@ -603,7 +637,7 @@ nav {
 
 .skill h3 {
     font-family: "Playfair Display", serif;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 500;
 }
 
@@ -613,15 +647,15 @@ nav {
 ========================= */
 
 .contact {
-    padding: 140px 35px;
+    padding: 130px 30px;
 
     background:
         radial-gradient(
             circle at 50% 0,
-            rgba(201,164,92,.09),
+            rgba(201,164,92,0.09),
             transparent 40%
         ),
-        #06101c;
+        #06111f;
 }
 
 .contact-inner {
@@ -630,32 +664,40 @@ nav {
 }
 
 .contact h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(60px,9vw,110px);
-    line-height: 1;
     margin: 15px 0 25px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(60px, 9vw, 105px);
+
+    line-height: 1;
 }
 
-.contact-intro {
-    color: var(--muted);
+.contact-description {
     max-width: 600px;
+
+    color: var(--muted);
+
     line-height: 1.8;
+
     margin-bottom: 55px;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
+
     gap: 14px;
 }
 
 .contact-card {
     padding: 28px;
 
-    background: rgba(255,255,255,.025);
-    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.025);
 
-    transition: .3s;
+    border: 1px solid var(--border);
+
+    transition: 0.3s;
 }
 
 .contact-card:hover {
@@ -667,6 +709,7 @@ nav {
     display: block;
 
     color: var(--gold);
+
     font-size: 9px;
     letter-spacing: 2px;
 
@@ -680,7 +723,9 @@ nav {
 
 .contact-card small {
     display: block;
+
     color: var(--muted);
+
     margin-top: 5px;
 }
 
@@ -690,10 +735,11 @@ nav {
 ========================= */
 
 footer {
-    background: #040b13;
-    border-top: 1px solid var(--line);
+    padding: 40px 30px;
 
-    padding: 40px 35px;
+    background: #040b13;
+
+    border-top: 1px solid var(--border);
 }
 
 .footer-inner {
@@ -702,6 +748,7 @@ footer {
 
     display: flex;
     justify-content: space-between;
+
     gap: 30px;
 }
 
@@ -709,9 +756,11 @@ footer {
     font-family: "Playfair Display", serif;
 }
 
-.footer-sub {
+.footer-title {
     color: var(--muted);
+
     font-size: 10px;
+
     margin-top: 5px;
 }
 
@@ -720,6 +769,7 @@ footer {
     gap: 22px;
 
     color: var(--muted);
+
     font-size: 10px;
 }
 
@@ -731,24 +781,9 @@ footer {
     max-width: 1250px;
     margin: 30px auto 0;
 
-    color: #4e5b6b;
+    color: #526070;
+
     font-size: 9px;
-}
-
-
-/* =========================
-   ANIMATIONS
-========================= */
-
-.fade {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity .8s ease, transform .8s ease;
-}
-
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 
@@ -756,87 +791,63 @@ footer {
    MOBILE
 ========================= */
 
-@media(max-width:850px) {
+@media (max-width: 850px) {
 
-    .nav-inner {
-        padding: 18px 20px;
-    }
-
-    .menu {
-        display: block;
+    .navbar {
+        padding: 0 20px;
     }
 
     .nav-links {
-        display: none;
-
-        position: absolute;
-        top: 65px;
-        left: 0;
-
-        width: 100%;
-
-        padding: 25px;
-
-        background: #06101c;
-
-        flex-direction: column;
-        gap: 20px;
+        gap: 18px;
     }
 
-    .nav-links.open {
-        display: flex;
-    }
-
-    .hero-inner {
+    .hero-container {
         grid-template-columns: 1fr;
-        padding: 120px 25px 80px;
+
+        padding: 120px 25px 70px;
     }
 
     .hero h1 {
         font-size: 70px;
     }
 
-    .hero-image {
+    .hero-photo {
         position: absolute;
-        right: -120px;
-        bottom: -20px;
 
-        width: 600px;
+        right: -130px;
+        bottom: -30px;
+
+        width: 580px;
         height: 650px;
 
-        opacity: .45;
+        opacity: 0.42;
 
         pointer-events: none;
     }
 
-    .hero-description {
-        max-width: 480px;
-    }
-
-    .section {
-        padding: 90px 25px;
-    }
-
-    .dark {
-        padding-left: 25px;
-        padding-right: 25px;
+    .hero-text {
+        z-index: 5;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
+
+        gap: 50px;
     }
 
-    .stats {
+    .about-stats {
         border-left: none;
-        border-top: 1px solid rgba(201,164,92,.3);
+
+        border-top: 1px solid rgba(201,164,92,0.3);
+
         padding-left: 0;
         padding-top: 15px;
     }
 
-    .experience-item {
+    .experience {
         grid-template-columns: 1fr;
-        gap: 15px;
+
+        gap: 12px;
     }
 
     .cards {
@@ -845,7 +856,9 @@ footer {
 
     .education {
         grid-template-columns: 1fr;
+
         gap: 20px;
+
         padding: 30px;
     }
 
@@ -871,7 +884,15 @@ footer {
 }
 
 
-@media(max-width:500px) {
+@media (max-width: 520px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 8px;
+    }
 
     .hero h1 {
         font-size: 57px;
@@ -882,17 +903,26 @@ footer {
         font-size: 14px;
     }
 
-    .buttons {
+    .hero-buttons {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .section-title {
-        font-size: 44px;
+    .section {
+        padding: 90px 25px;
     }
 
-    .experience-item h3 {
-        font-size: 30px;
+    .section-dark {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .section-title {
+        font-size: 43px;
+    }
+
+    .experience h3 {
+        font-size: 29px;
     }
 
 }
@@ -904,19 +934,17 @@ footer {
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+<!-- NAVIGATION -->
 
 <nav>
 
-<div class="nav-inner">
+<div class="navbar">
 
 <a href="#home" class="logo">
 KS<span>.</span>
 </a>
 
-<div class="nav-links" id="navLinks">
+<div class="nav-links">
 
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
@@ -926,24 +954,18 @@ KS<span>.</span>
 
 </div>
 
-<button class="menu" onclick="toggleMenu()">
-☰
-</button>
-
 </div>
 
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-<div class="hero-inner">
+<div class="hero-container">
 
-<div class="hero-content fade">
+<div class="hero-text">
 
 <div class="eyebrow">
 INTERNATIONAL AFFAIRS • DIPLOMACY • COMMUNICATIONS
@@ -951,7 +973,7 @@ INTERNATIONAL AFFAIRS • DIPLOMACY • COMMUNICATIONS
 
 <h1>
 Kaleab<br>
-<span class="outline">Sintayehu</span>
+<span>Sintayehu</span>
 </h1>
 
 <p class="hero-description">
@@ -963,21 +985,19 @@ leadership and event management.
 
 </p>
 
+<div class="hero-buttons">
 
-<div class="buttons">
-
-<a href="#experience" class="btn btn-gold">
+<a href="#experience" class="button button-primary">
 Explore My Journey
 </a>
 
-<a href="#contact" class="btn btn-outline">
+<a href="#contact" class="button button-secondary">
 Get In Touch
 </a>
 
 </div>
 
-
-<div class="socials">
+<div class="social-links">
 
 <a href="https://www.linkedin.com/in/kaleab-sintayehu-1708a3299" target="_blank">
 LinkedIn
@@ -1000,9 +1020,14 @@ Telegram
 </div>
 
 
-<div class="hero-image">
+<!-- PHOTO -->
 
-<img src="images/kaleab.jpg" alt="Kaleab Sintayehu">
+<div class="hero-photo">
+
+<img
+src="images/kaleab.jpg"
+alt="Kaleab Sintayehu"
+>
 
 </div>
 
@@ -1011,17 +1036,15 @@ Telegram
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
 <section class="section" id="about">
 
-<div class="section-number">
+<div class="section-label">
 01 — ABOUT
 </div>
 
-<h2 class="section-title fade">
+<h2 class="section-title">
 Building a career around
 <span>international affairs.</span>
 </h2>
@@ -1029,9 +1052,9 @@ Building a career around
 
 <div class="about-grid">
 
-<div class="about-text fade">
+<div class="about-text">
 
-<p class="large">
+<p class="intro">
 
 I am a Political Science and International Relations
 student at Addis Ababa University with a growing interest
@@ -1042,40 +1065,62 @@ and global affairs.
 
 <p>
 
-Alongside my academic journey, I have been developing
-practical experience through youth leadership, international
-programs, communications, event coordination, public speaking
-and diplomatic engagement.
+Alongside my academic journey, I have been actively
+developing practical experience through youth leadership,
+international programs, communications, event coordination,
+public speaking and diplomatic engagement.
 
 </p>
 
 <p>
 
-My goal is to build a career that connects people,
-institutions and ideas across borders while contributing
-meaningfully to international cooperation and African
-development.
+My interests lie at the intersection of diplomacy,
+international cooperation, African affairs, communications
+and youth leadership.
 
 </p>
 
 </div>
 
 
-<div class="stats fade">
+<div class="about-stats">
 
 <div class="stat">
-<strong>PSIR</strong>
-<span>Addis Ababa University</span>
+
+<span class="stat-number">
+PSIR
+</span>
+
+<span class="stat-text">
+Addis Ababa University
+</span>
+
 </div>
 
-<div class="stat">
-<strong>2026–27</strong>
-<span>International Organization of Youth Ambassador</span>
-</div>
 
 <div class="stat">
-<strong>IFA</strong>
-<span>Communications Department Intern</span>
+
+<span class="stat-number">
+IFA
+</span>
+
+<span class="stat-text">
+Communications Department Intern
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-number">
+2026–27
+</span>
+
+<span class="stat-text">
+International Youth Ambassador
+</span>
+
 </div>
 
 </div>
@@ -1085,36 +1130,34 @@ development.
 </section>
 
 
-<!-- =========================
-     EXPERIENCE
-========================= -->
+<!-- EXPERIENCE -->
 
-<section class="section dark" id="experience">
+<section class="section section-dark" id="experience">
 
-<div class="section-number">
+<div class="section-label">
 02 — EXPERIENCE
 </div>
 
-<h2 class="section-title fade">
+<h2 class="section-title">
 Experience that goes
 <span>beyond the classroom.</span>
 </h2>
 
 
-<div class="experience">
+<div class="experience-list">
 
 
 <!-- IFA -->
 
-<div class="experience-item fade">
+<div class="experience">
 
-<div class="date">
+<div class="experience-date">
 CURRENT
 </div>
 
 <div>
 
-<div class="type">
+<div class="experience-category">
 INTERNSHIP
 </div>
 
@@ -1122,25 +1165,25 @@ INTERNSHIP
 Institute of Foreign Affairs
 </h3>
 
-<div class="role">
+<div class="experience-role">
 Communications Department Intern
 </div>
 
-<p class="description">
+<p class="experience-description">
 
-Developing practical experience in communications
-within Ethiopia's foreign affairs environment, supporting
-communication activities and gaining exposure to institutional
-and international affairs.
+Gaining practical experience in communications within
+Ethiopia's foreign affairs environment, supporting
+communications activities and developing exposure to
+institutional and international affairs.
 
 </p>
 
 <div class="tags">
 
-<span>Communications</span>
-<span>Foreign Affairs</span>
-<span>Media</span>
-<span>International Relations</span>
+<span class="tag">Communications</span>
+<span class="tag">Foreign Affairs</span>
+<span class="tag">Media</span>
+<span class="tag">International Relations</span>
 
 </div>
 
@@ -1151,15 +1194,15 @@ and international affairs.
 
 <!-- IOY -->
 
-<div class="experience-item fade">
+<div class="experience">
 
-<div class="date">
+<div class="experience-date">
 2026–27
 </div>
 
 <div>
 
-<div class="type">
+<div class="experience-category">
 YOUTH LEADERSHIP
 </div>
 
@@ -1167,23 +1210,23 @@ YOUTH LEADERSHIP
 International Organization of Youth
 </h3>
 
-<div class="role">
+<div class="experience-role">
 International Youth Ambassador
 </div>
 
-<p class="description">
+<p class="experience-description">
 
-Engaging in youth-focused international initiatives
-and contributing to programs that connect young people
-with global opportunities and networks.
+Participating in youth-focused international initiatives
+and connecting with programs and networks that create
+opportunities for young people in global affairs.
 
 </p>
 
 <div class="tags">
 
-<span>Youth Leadership</span>
-<span>International Engagement</span>
-<span>Advocacy</span>
+<span class="tag">Youth Leadership</span>
+<span class="tag">International Engagement</span>
+<span class="tag">Advocacy</span>
 
 </div>
 
@@ -1194,15 +1237,15 @@ with global opportunities and networks.
 
 <!-- CONNECT -->
 
-<div class="experience-item fade">
+<div class="experience">
 
-<div class="date">
+<div class="experience-date">
 2026
 </div>
 
 <div>
 
-<div class="type">
+<div class="experience-category">
 PROJECT MANAGEMENT
 </div>
 
@@ -1210,11 +1253,11 @@ PROJECT MANAGEMENT
 Connect to the World
 </h3>
 
-<div class="role">
+<div class="experience-role">
 Project Management Intern
 </div>
 
-<p class="description">
+<p class="experience-description">
 
 Supporting project coordination, meeting documentation,
 follow-up, event planning and cross-team communication
@@ -1224,9 +1267,9 @@ for youth-focused international programs.
 
 <div class="tags">
 
-<span>Project Management</span>
-<span>Coordination</span>
-<span>Events</span>
+<span class="tag">Project Management</span>
+<span class="tag">Coordination</span>
+<span class="tag">Events</span>
 
 </div>
 
@@ -1239,17 +1282,15 @@ for youth-focused international programs.
 </section>
 
 
-<!-- =========================
-     INTERNATIONAL ENGAGEMENT
-========================= -->
+<!-- INTERNATIONAL ENGAGEMENT -->
 
 <section class="section" id="engagement">
 
-<div class="section-number">
+<div class="section-label">
 03 — INTERNATIONAL ENGAGEMENT
 </div>
 
-<h2 class="section-title fade">
+<h2 class="section-title">
 Learning through
 <span>global engagement.</span>
 </h2>
@@ -1258,11 +1299,15 @@ Learning through
 <div class="cards">
 
 
-<div class="card fade">
+<div class="card">
 
-<div class="card-number">01</div>
+<div class="card-number">
+01
+</div>
 
-<h3>Diplomacy</h3>
+<h3>
+Diplomacy
+</h3>
 
 <p>
 Developing practical exposure to diplomacy,
@@ -1273,11 +1318,15 @@ and international affairs.
 </div>
 
 
-<div class="card fade">
+<div class="card">
 
-<div class="card-number">02</div>
+<div class="card-number">
+02
+</div>
 
-<h3>Model United Nations</h3>
+<h3>
+Model United Nations
+</h3>
 
 <p>
 Experience in diplomatic simulations, position
@@ -1288,11 +1337,15 @@ discussions.
 </div>
 
 
-<div class="card fade">
+<div class="card">
 
-<div class="card-number">03</div>
+<div class="card-number">
+03
+</div>
 
-<h3>Youth Leadership</h3>
+<h3>
+Youth Leadership
+</h3>
 
 <p>
 Participating in youth initiatives, leadership
@@ -1302,11 +1355,15 @@ programs, conferences and international networks.
 </div>
 
 
-<div class="card fade">
+<div class="card">
 
-<div class="card-number">04</div>
+<div class="card-number">
+04
+</div>
 
-<h3>Communications</h3>
+<h3>
+Communications
+</h3>
 
 <p>
 Experience creating communications content,
@@ -1317,11 +1374,15 @@ diverse audiences.
 </div>
 
 
-<div class="card fade">
+<div class="card">
 
-<div class="card-number">05</div>
+<div class="card-number">
+05
+</div>
 
-<h3>Event Management</h3>
+<h3>
+Event Management
+</h3>
 
 <p>
 Experience supporting event coordination,
@@ -1332,11 +1393,15 @@ participant engagement.
 </div>
 
 
-<div class="card fade">
+<div class="card">
 
-<div class="card-number">06</div>
+<div class="card-number">
+06
+</div>
 
-<h3>Public Speaking</h3>
+<h3>
+Public Speaking
+</h3>
 
 <p>
 Background in debates, Model UN, youth forums,
@@ -1350,23 +1415,21 @@ presentations and international discussions.
 </section>
 
 
-<!-- =========================
-     EDUCATION
-========================= -->
+<!-- EDUCATION -->
 
 <section class="section">
 
-<div class="section-number">
+<div class="section-label">
 04 — EDUCATION
 </div>
 
-<h2 class="section-title fade">
+<h2 class="section-title">
 Academic
 <span>foundation.</span>
 </h2>
 
 
-<div class="education fade">
+<div class="education">
 
 <div class="education-year">
 2025 —
@@ -1375,7 +1438,7 @@ Academic
 <div>
 
 <div class="education-label">
-UNDERGRADUATE DEGREE
+UNDERGRADUATE
 </div>
 
 <h3>
@@ -1401,19 +1464,42 @@ with a growing focus on diplomacy and international affairs.
 
 <div class="languages">
 
-<div class="language fade">
-<strong>English</strong>
-<small>Fluent</small>
+<div class="language">
+
+<strong>
+English
+</strong>
+
+<span>
+Fluent
+</span>
+
 </div>
 
-<div class="language fade">
-<strong>Amharic</strong>
-<small>Fluent</small>
+
+<div class="language">
+
+<strong>
+Amharic
+</strong>
+
+<span>
+Fluent
+</span>
+
 </div>
 
-<div class="language fade">
-<strong>French</strong>
-<small>Beginner</small>
+
+<div class="language">
+
+<strong>
+French
+</strong>
+
+<span>
+Beginner
+</span>
+
 </div>
 
 </div>
@@ -1421,17 +1507,15 @@ with a growing focus on diplomacy and international affairs.
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- SKILLS -->
 
-<section class="section dark" id="skills">
+<section class="section section-dark" id="skills">
 
-<div class="section-number">
+<div class="section-label">
 05 — SKILLS
 </div>
 
-<h2 class="section-title fade">
+<h2 class="section-title">
 Areas I'm
 <span>developing.</span>
 </h2>
@@ -1439,42 +1523,43 @@ Areas I'm
 
 <div class="skills">
 
-<div class="skill fade">
+
+<div class="skill">
 <span class="skill-number">01</span>
 <h3>International Affairs</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">02</span>
 <h3>Diplomacy & Protocol</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">03</span>
 <h3>Communications</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">04</span>
 <h3>Public Speaking</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">05</span>
 <h3>Event Management</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">06</span>
 <h3>Project Coordination</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">07</span>
 <h3>Youth Leadership</h3>
 </div>
 
-<div class="skill fade">
+<div class="skill">
 <span class="skill-number">08</span>
 <h3>Cross-Cultural Communication</h3>
 </div>
@@ -1484,15 +1569,13 @@ Areas I'm
 </section>
 
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
 <div class="contact-inner">
 
-<div class="section-number">
+<div class="section-label">
 06 — CONTACT
 </div>
 
@@ -1500,11 +1583,10 @@ Areas I'm
 Let's connect.
 </h2>
 
-<p class="contact-intro">
+<p class="contact-description">
 
-Whether you're interested in international affairs,
-youth initiatives, communications, events or collaboration,
-feel free to reach out.
+Interested in international affairs, youth initiatives,
+communications, events or collaboration? Get in touch.
 
 </p>
 
@@ -1513,8 +1595,8 @@ feel free to reach out.
 
 
 <a
+class="contact-card"
 href="mailto:kaleabsintayehu0@gmail.com"
-class="contact-card fade"
 >
 
 <div class="contact-label">
@@ -1529,8 +1611,8 @@ kaleabsintayehu0@gmail.com
 
 
 <a
+class="contact-card"
 href="tel:+251984268005"
-class="contact-card fade"
 >
 
 <div class="contact-label">
@@ -1549,9 +1631,9 @@ PHONE
 
 
 <a
+class="contact-card"
 href="https://www.linkedin.com/in/kaleab-sintayehu-1708a3299"
 target="_blank"
-class="contact-card fade"
 >
 
 <div class="contact-label">
@@ -1559,16 +1641,16 @@ LINKEDIN
 </div>
 
 <strong>
-Connect with me
+Kaleab Sintayehu
 </strong>
 
 </a>
 
 
 <a
+class="contact-card"
 href="https://www.instagram.com/kal_s001"
 target="_blank"
-class="contact-card fade"
 >
 
 <div class="contact-label">
@@ -1583,9 +1665,9 @@ INSTAGRAM
 
 
 <a
+class="contact-card"
 href="https://t.me/kal_s001"
 target="_blank"
-class="contact-card fade"
 >
 
 <div class="contact-label">
@@ -1606,9 +1688,7 @@ TELEGRAM
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1620,7 +1700,7 @@ TELEGRAM
 KALEAB SINTAYEHU
 </div>
 
-<div class="footer-sub">
+<div class="footer-title">
 International Affairs • Diplomacy • Communications
 </div>
 
@@ -1629,15 +1709,24 @@ International Affairs • Diplomacy • Communications
 
 <div class="footer-links">
 
-<a href="https://www.linkedin.com/in/kaleab-sintayehu-1708a3299" target="_blank">
+<a
+href="https://www.linkedin.com/in/kaleab-sintayehu-1708a3299"
+target="_blank"
+>
 LinkedIn
 </a>
 
-<a href="https://www.instagram.com/kal_s001" target="_blank">
+<a
+href="https://www.instagram.com/kal_s001"
+target="_blank"
+>
 Instagram
 </a>
 
-<a href="https://t.me/kal_s001" target="_blank">
+<a
+href="https://t.me/kal_s001"
+target="_blank"
+>
 Telegram
 </a>
 
@@ -1653,24 +1742,5 @@ Telegram
 </footer>
 
 
-<script>
-
-/* MOBILE MENU */
-
-function toggleMenu() {
-
-    document
-        .getElementById("navLinks")
-        .classList
-        .toggle("open");
-
-}
-
-
-/* SCROLL ANIMATION */
-
-const observer = new IntersectionObserver(
-
-    function(entries) {
-
-       
+</body>
+</html>
